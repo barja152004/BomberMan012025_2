@@ -147,36 +147,94 @@ void ABomberMan012025GameMode::SpawnMapa()
 
 void ABomberMan012025GameMode::SpawnBloques()
 {
-	//Recorrer el array de bloques y hacer spawn de cada uno
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 50; i++) // Ajustado para 50x50
 	{
-		for (int j = 0; j < 50; j++) {
-			if (UWorld* Mundo = GetWorld()) {
+		for (int j = 0; j < 50; j++)
+		{
+			if (UWorld* Mundo = GetWorld())
+			{
 				switch (arrayMapaBloques[i][j])
 				{
-				case 2:
-					Mundo->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
-						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
-					GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("1"));
-					break;
-				case 1:
-					Mundo->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
-						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
-					GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("2"));
-					break;
-				case 4:
+				case 1: // Bloque de acero
 					Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
 						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
-					GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("3"));
 					break;
-				case 0:
+				case 2: // Bloque de agua
+					Mundo->SpawnActor<ABloqueAgua>(ABloqueAgua::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 3: // Bloque de arena
+					Mundo->SpawnActor<ABloqueArena>(ABloqueArena::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 4: // Bloque de césped
+					Mundo->SpawnActor<ABloqueCesped>(ABloqueCesped::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 5: // Bloque de concreto
+					Mundo->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 6: // Bloque de ladrillo
+					Mundo->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 7: // Bloque de madera
+					Mundo->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 8: // Bloque de oro
+					Mundo->SpawnActor<ABloqueOro>(ABloqueOro::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 9: // Bloque de roca
+					Mundo->SpawnActor<ABloqueRoca>(ABloqueRoca::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 10: // Bloque de vidrio
+					Mundo->SpawnActor<ABloqueVidrio>(ABloqueVidrio::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+					break;
+				case 0: // Espacio vacío
 					break;
 				}
 			}
 		}
 	}
-
 }
+
+//void ABomberMan012025GameMode::SpawnBloques()
+//{
+//	//Recorrer el array de bloques y hacer spawn de cada uno
+//	for (int i = 0; i < 50; i++)
+//	{
+//		for (int j = 0; j < 50; j++) {
+//			if (UWorld* Mundo = GetWorld()) {
+//				switch (arrayMapaBloques[i][j])
+//				{
+//				case 2:
+//					Mundo->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+//						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+//					GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("1"));
+//					break;
+//				case 1:
+//					Mundo->SpawnActor<ABloqueConcreto>(ABloqueConcreto::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+//						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+//					GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("2"));
+//					break;
+//				case 4:
+//					Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f), FRotator::ZeroRotator)
+//						->SetActorScale3D(FVector(2.0f, 2.0f, 2.0f));
+//					GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("3"));
+//					break;
+//				case 0:
+//					break;
+//				}
+//			}
+//		}
+//	}
+//
+//}
 
 void ABomberMan012025GameMode::InicializarMapaBloques()
 {
@@ -189,17 +247,17 @@ void ABomberMan012025GameMode::InicializarMapaBloques()
 
 		for (int j = 0; j < 50; j++)
 		{
-			if (i == 0 || i == 49 || j == 0 || j == 49) // Bordes del mapa
+			if (i == 0 || i == 49 || j == 0 || j == 49) // Bordes del laberinto
 			{
-				arrayMapaBloques[i][j] = 4;
+				arrayMapaBloques[i][j] = 1; // Bloques de acero
 			}
-			else if ((i % 2 == 0) && (j % 2 == 0)) // Bloques de concreto
+			else if (i % 2 == 0 && j % 2 == 0) // Celdas base del laberinto
 			{
-				arrayMapaBloques[i][j] = 1;
+				arrayMapaBloques[i][j] = 0; // Espacio vacío para el camino
 			}
-			else if (FMath::RandRange(0, 4) == 2) // Probabilidad aleatoria de bloques de ladrillo
+			else if (FMath::RandRange(0, 100) < 50) // Probabilidad de bloque en los espacios intermedios
 			{
-				arrayMapaBloques[i][j] = 2;
+				arrayMapaBloques[i][j] = FMath::RandRange(2, 10); // Bloques aleatorios
 			}
 			else
 			{
@@ -208,7 +266,34 @@ void ABomberMan012025GameMode::InicializarMapaBloques()
 		}
 	}
 
+	// Abrir caminos adicionales entre celdas para un verdadero laberinto
+	for (int i = 2; i < 48; i += 2)
+	{
+		for (int j = 2; j < 48; j += 2)
+		{
+			int RandomDirection = FMath::RandRange(0, 3); // Direcciones: 0 = arriba, 1 = derecha, 2 = abajo, 3 = izquierda
+
+			switch (RandomDirection)
+			{
+			case 0: // Arriba
+				arrayMapaBloques[i - 1][j] = 0;
+				break;
+			case 1: // Derecha
+				arrayMapaBloques[i][j + 1] = 0;
+				break;
+			case 2: // Abajo
+				arrayMapaBloques[i + 1][j] = 0;
+				break;
+			case 3: // Izquierda
+				arrayMapaBloques[i][j - 1] = 0;
+				break;
+			}
+		}
+	}
 }
+
+
+
 
 void ABomberMan012025GameMode::AgregarEnemigo(AEnemigo* NuevoEnemigo)
 {
