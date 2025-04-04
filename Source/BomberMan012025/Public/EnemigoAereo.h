@@ -14,4 +14,12 @@ class BOMBERMAN012025_API AEnemigoAereo : public AEnemigo
 {
 	GENERATED_BODY()
 	
+public:
+	AEnemigoAereo();
+
+protected:
+	virtual void BeginPlay() override;
+
+private:
+	void InicializarEnemigoAereo();
 };

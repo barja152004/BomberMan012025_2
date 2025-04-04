@@ -9,6 +9,18 @@
 #include "BloqueMadera.h"
 #include "BloqueLadrillo.h"
 #include "BloqueConcreto.h"
+#include "BloqueAgua.h"
+#include "BloqueArena.h"
+#include "BloqueCesped.h"
+#include "BloqueOro.h"
+#include "BloqueRoca.h"
+#include "BloqueVidrio.h"
+#include "Enemigo.h"
+#include "EnemigoAcuatico.h"
+#include "EnemigoTerrestre.h"
+#include "EnemigoAereo.h"
+#include "EnemigoSubterraneo.h"
+
 
 ABomberMan012025GameMode::ABomberMan012025GameMode()
 {
@@ -67,6 +79,27 @@ void ABomberMan012025GameMode::SpawnMapa()
 
 		// Mensaje en pantalla
 		//GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, TEXT("Bloques generados"));
+
+		//haciendo spawn de EnemigoAcuatico
+		for (int i = 0; i < 3; i++)
+		{
+			Mundo->SpawnActor<AEnemigoAcuatico>(AEnemigoAcuatico::StaticClass(), FVector(350.0f + i * 200, 730.0f + i * 200, 580.0f), FRotator::ZeroRotator);
+		}
+		//haciendo spawn de EnemigoTerrestre
+		for (int i = 0; i < 3; i++)
+		{
+			Mundo->SpawnActor<AEnemigoTerrestre>(AEnemigoTerrestre::StaticClass(), FVector(350.0f + i * 200, 1380.0f + i * 200, 580.0f), FRotator::ZeroRotator);
+		}
+		//haciendo spawn de EnemigoAereo
+		for (int i = 0; i < 3; i++)
+		{
+			Mundo->SpawnActor<AEnemigoAereo>(AEnemigoAereo::StaticClass(), FVector(350.0f + i * 200, 1910.0f + i * 200, 580.0f), FRotator::ZeroRotator);
+		}
+		//haciendo spawn de EnemigoSubterraneo
+		for (int i = 0; i < 3; i++)
+		{
+			Mundo->SpawnActor<AEnemigoSubterraneo>(AEnemigoSubterraneo::StaticClass(), FVector(350.0f + i * 200, 2240.0f + i * 200, 580.0f), FRotator::ZeroRotator);
+		}
 
 	}
 

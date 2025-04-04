@@ -25,7 +25,7 @@ private:
 
 public:
 	FVector posicionSgtBloque = FVector(1000.0f, 500.0f,20.0f );
-	TArray<TArray<int>> arrayMapaBloques = {
+	TArray<TArray<int32>> arrayMapaBloques = {
 									{4,4,4,4,4,4,4,4,4,4,4,4},
 									{4,0,0,0,2,2,2,0,0,0,0,4},
 									{4,2,1,0,0,0,0,0,1,2,0,4},

@@ -75,7 +75,6 @@ template<> BOMBERMAN012025_API UClass* StaticClass<AEnemigoAcuatico>()
 {
 	return AEnemigoAcuatico::StaticClass();
 }
-AEnemigoAcuatico::AEnemigoAcuatico() {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemigoAcuatico);
 AEnemigoAcuatico::~AEnemigoAcuatico() {}
 // End Class AEnemigoAcuatico
@@ -84,10 +83,10 @@ AEnemigoAcuatico::~AEnemigoAcuatico() {}
 struct Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAcuatico_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemigoAcuatico, AEnemigoAcuatico::StaticClass, TEXT("AEnemigoAcuatico"), &Z_Registration_Info_UClass_AEnemigoAcuatico, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigoAcuatico), 1558133283U) },
+		{ Z_Construct_UClass_AEnemigoAcuatico, AEnemigoAcuatico::StaticClass, TEXT("AEnemigoAcuatico"), &Z_Registration_Info_UClass_AEnemigoAcuatico, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigoAcuatico), 254563562U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAcuatico_h_2754809055(TEXT("/Script/BomberMan012025"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAcuatico_h_1327966760(TEXT("/Script/BomberMan012025"),
 	Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAcuatico_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAcuatico_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

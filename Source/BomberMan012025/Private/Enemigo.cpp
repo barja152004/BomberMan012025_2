@@ -2,12 +2,26 @@
 
 
 #include "Enemigo.h"
+#include "Components/StaticMeshComponent.h"
+#include "UObject/ConstructorHelpers.h"
 
 // Sets default values
 AEnemigo::AEnemigo()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	//creando componente de malla estatica y adjuntarlo al root
+	EnemigoMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("EnemigoMesh"));
+	EnemigoMesh->SetupAttachment(RootComponent);
+
+	//cargar la malla del enemigo
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshAsset(TEXT("/Script/Engine.StaticMesh'/Game/StarterContent/Shapes/Shape_QuadPyramid.Shape_QuadPyramid'"));
+	if (MeshAsset.Succeeded())
+	{
+		EnemigoMesh->SetStaticMesh(MeshAsset.Object);
+	}
+
 
 }
 

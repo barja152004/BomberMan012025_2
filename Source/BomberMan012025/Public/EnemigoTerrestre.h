@@ -13,5 +13,14 @@ UCLASS()
 class BOMBERMAN012025_API AEnemigoTerrestre : public AEnemigo
 {
 	GENERATED_BODY()
+
+public:
+	AEnemigoTerrestre();
+
+protected:
+	virtual void BeginPlay() override;
+
+private:
+	void InicializarEnemigoTerrestre();
 	
 };

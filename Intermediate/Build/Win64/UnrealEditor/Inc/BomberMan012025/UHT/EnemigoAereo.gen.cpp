@@ -75,7 +75,6 @@ template<> BOMBERMAN012025_API UClass* StaticClass<AEnemigoAereo>()
 {
 	return AEnemigoAereo::StaticClass();
 }
-AEnemigoAereo::AEnemigoAereo() {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemigoAereo);
 AEnemigoAereo::~AEnemigoAereo() {}
 // End Class AEnemigoAereo
@@ -84,10 +83,10 @@ AEnemigoAereo::~AEnemigoAereo() {}
 struct Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAereo_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemigoAereo, AEnemigoAereo::StaticClass, TEXT("AEnemigoAereo"), &Z_Registration_Info_UClass_AEnemigoAereo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigoAereo), 2875219707U) },
+		{ Z_Construct_UClass_AEnemigoAereo, AEnemigoAereo::StaticClass, TEXT("AEnemigoAereo"), &Z_Registration_Info_UClass_AEnemigoAereo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigoAereo), 3217567160U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAereo_h_2174586010(TEXT("/Script/BomberMan012025"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAereo_h_2877918487(TEXT("/Script/BomberMan012025"),
 	Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAereo_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoAereo_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

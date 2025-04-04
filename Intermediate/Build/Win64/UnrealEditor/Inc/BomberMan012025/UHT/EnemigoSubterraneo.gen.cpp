@@ -75,7 +75,6 @@ template<> BOMBERMAN012025_API UClass* StaticClass<AEnemigoSubterraneo>()
 {
 	return AEnemigoSubterraneo::StaticClass();
 }
-AEnemigoSubterraneo::AEnemigoSubterraneo() {}
 DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemigoSubterraneo);
 AEnemigoSubterraneo::~AEnemigoSubterraneo() {}
 // End Class AEnemigoSubterraneo
@@ -84,10 +83,10 @@ AEnemigoSubterraneo::~AEnemigoSubterraneo() {}
 struct Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoSubterraneo_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemigoSubterraneo, AEnemigoSubterraneo::StaticClass, TEXT("AEnemigoSubterraneo"), &Z_Registration_Info_UClass_AEnemigoSubterraneo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigoSubterraneo), 1212738793U) },
+		{ Z_Construct_UClass_AEnemigoSubterraneo, AEnemigoSubterraneo::StaticClass, TEXT("AEnemigoSubterraneo"), &Z_Registration_Info_UClass_AEnemigoSubterraneo, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigoSubterraneo), 1252303831U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoSubterraneo_h_1235388127(TEXT("/Script/BomberMan012025"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoSubterraneo_h_3078066589(TEXT("/Script/BomberMan012025"),
 	Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoSubterraneo_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoSubterraneo_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
