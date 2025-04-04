@@ -22,5 +22,20 @@ protected:
 
 private:
 	void InicializarEnemigoTerrestre();
+
+	//-------------
+	// Función para mover aleatoriamente
+	void MoverAleatoriamente();
+
+	// Timer para manejar el movimiento
+	FTimerHandle MovimientoTimerHandle;
+
+	// Rango de movimiento
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoX = 150.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoY = 150.0f;
+
 	
 };

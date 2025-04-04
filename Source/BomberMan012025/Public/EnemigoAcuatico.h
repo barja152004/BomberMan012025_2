@@ -6,6 +6,7 @@
 #include "Enemigo.h"
 #include "EnemigoAcuatico.generated.h"
 
+
 /**
  * 
  */
@@ -22,5 +23,19 @@ protected:
 
 private:
 	void InicializarEnemigoAcuatico();
-	
+
+    //----------------------------------
+	// Nueva función para mover aleatoriamente
+		void MoverAleatoriamente();
+
+	// Timer para controlar el movimiento aleatorio
+	FTimerHandle MovimientoTimerHandle;
+
+	// Rango de movimiento aleatorio
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoX = 100.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoY = 100.0f;
+
 };

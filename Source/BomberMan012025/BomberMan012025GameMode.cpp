@@ -21,6 +21,8 @@
 #include "EnemigoAereo.h"
 #include "EnemigoSubterraneo.h"
 
+#include "Math/UnrealMathUtility.h"
+
 
 ABomberMan012025GameMode::ABomberMan012025GameMode()
 {
@@ -30,6 +32,11 @@ ABomberMan012025GameMode::ABomberMan012025GameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
+
+	//------------------------------------------------
+	// Inicializar la matriz del mapa cuando se crea el objeto
+	InicializarMapaBloques();
+	//------------------------------------------------
 }
 
 void ABomberMan012025GameMode::BeginPlay()
@@ -40,7 +47,7 @@ void ABomberMan012025GameMode::BeginPlay()
 	SpawnMapa();
 
 	//generar bloques de madera
-	SpawnBloqueMadera();
+	//SpawnBloqueMadera();
 
 	//generar bloques de ladrillo
 	//SpawnBloqueLadrillo();
@@ -54,27 +61,27 @@ void ABomberMan012025GameMode::SpawnMapa()
 	if (UWorld* Mundo = GetWorld())
 	{
 		// Crear el suelo (bloque grande)
-		Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(1360.0f, 1300.0f, -150.0f), FRotator::ZeroRotator)
-			->SetActorScale3D(FVector(25.0f, 25.0f, 0.5f));
+		//Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(1360.0f, 1300.0f, -150.0f), FRotator::ZeroRotator)
+		//	->SetActorScale3D(FVector(25.0f, 25.0f, 0.5f));
 
-		// Muros verticales (izquierda y derecha)
-		Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(160.0f, 1300.0f, 50.0f), FRotator(90, 90, 90))
-			->SetActorScale3D(FVector(2.0f, 25.0f, 0.5f));
+		//// Muros verticales (izquierda y derecha)
+		//Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(160.0f, 1300.0f, 50.0f), FRotator(90, 90, 90))
+		//	->SetActorScale3D(FVector(2.0f, 25.0f, 0.5f));
 
-		Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(2660.0f, 1300.0f, 50.0f), FRotator(90, 90, 90))
-			->SetActorScale3D(FVector(2.0f, 25.0f, 0.5f));
+		//Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(2660.0f, 1300.0f, 50.0f), FRotator(90, 90, 90))
+		//	->SetActorScale3D(FVector(2.0f, 25.0f, 0.5f));
 
-		// Muros horizontales (arriba y abajo) - Rotados 90° en el eje Z
-		Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(1330.0f, 100.0f, 50.0f), FRotator(90, 90, 0))
-			->SetActorScale3D(FVector(2.0f, 25.0f, 0.5f));
+		//// Muros horizontales (arriba y abajo) - Rotados 90° en el eje Z
+		//Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(1330.0f, 100.0f, 50.0f), FRotator(90, 90, 0))
+		//	->SetActorScale3D(FVector(2.0f, 25.0f, 0.5f));
 
 
 
-		Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(2110.0f, 2440.0f, 50.0f), FRotator(90, 0, 90))
-			->SetActorScale3D(FVector(2.0f, 10.0f, 0.5f));
+		//Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(2110.0f, 2440.0f, 50.0f), FRotator(90, 0, 90))
+		//	->SetActorScale3D(FVector(2.0f, 10.0f, 0.5f));
 
-		Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(560.0f, 2440.0f, 50.0f), FRotator(90, 0, 90))
-			->SetActorScale3D(FVector(2.0f, 10.0f, 0.5f));
+		//Mundo->SpawnActor<ABloqueAcero>(ABloqueAcero::StaticClass(), FVector(560.0f, 2440.0f, 50.0f), FRotator(90, 0, 90))
+		//	->SetActorScale3D(FVector(2.0f, 10.0f, 0.5f));
 
 
 		// Mensaje en pantalla
@@ -105,45 +112,45 @@ void ABomberMan012025GameMode::SpawnMapa()
 
 }
 
-void ABomberMan012025GameMode::SpawnBloqueMadera()
-{
-	if (UWorld* Mundo = GetWorld())
-	{
-		Mundo->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), FVector(1360.0f, 2900.0f, -25.0f), FRotator::ZeroRotator)
-			->SetActorScale3D(FVector(5.0f, 2.0f, 0.5f));
+//void ABomberMan012025GameMode::SpawnBloqueMadera()
+//{
+//	if (UWorld* Mundo = GetWorld())
+//	{
+//		Mundo->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), FVector(1360.0f, 2900.0f, -25.0f), FRotator::ZeroRotator)
+//			->SetActorScale3D(FVector(5.0f, 2.0f, 0.5f));
+//
+//		Mundo->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), FVector(1360.0f, 3300.0f, 25.0f), FRotator::ZeroRotator)
+//			->SetActorScale3D(FVector(5.0f, 2.0f, 0.5f));
+//
+//		Mundo->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), FVector(1360.0f, 3600.0f, 75.0f), FRotator::ZeroRotator)
+//			->SetActorScale3D(FVector(5.0f, 2.0f, 0.5f));
+//	}
+//}
 
-		Mundo->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), FVector(1360.0f, 3300.0f, 25.0f), FRotator::ZeroRotator)
-			->SetActorScale3D(FVector(5.0f, 2.0f, 0.5f));
-
-		Mundo->SpawnActor<ABloqueMadera>(ABloqueMadera::StaticClass(), FVector(1360.0f, 3600.0f, 75.0f), FRotator::ZeroRotator)
-			->SetActorScale3D(FVector(5.0f, 2.0f, 0.5f));
-	}
-}
-
-void ABomberMan012025GameMode::SpawnBloqueLadrillo()
-{
-	if (UWorld* Mundo = GetWorld())
-	{
-		for (int i = 0; i < 8; i++)
-		{
-			for (int j = 0; j < 12; j++)
-			{
-				Mundo->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), FVector((200.0f + i * 300, 200.0f + j * 200, -100.0)), FRotator::ZeroRotator)
-					->SetActorScale3D(FVector(1.0f, 1.0f, 1.0));
-
-			}
-
-		}
-
-	}
-}
+//void ABomberMan012025GameMode::SpawnBloqueLadrillo()
+//{
+//	if (UWorld* Mundo = GetWorld())
+//	{
+//		for (int i = 0; i < 8; i++)
+//		{
+//			for (int j = 0; j < 12; j++)
+//			{
+//				Mundo->SpawnActor<ABloqueLadrillo>(ABloqueLadrillo::StaticClass(), FVector((200.0f + i * 300, 200.0f + j * 200, -100.0)), FRotator::ZeroRotator)
+//					->SetActorScale3D(FVector(1.0f, 1.0f, 1.0));
+//
+//			}
+//
+//		}
+//
+//	}
+//}
 
 void ABomberMan012025GameMode::SpawnBloques()
 {
 	//Recorrer el array de bloques y hacer spawn de cada uno
-	for (int i = 0; i < 12; i++)
+	for (int i = 0; i < 50; i++)
 	{
-		for (int j = 0; j < 12; j++) {
+		for (int j = 0; j < 50; j++) {
 			if (UWorld* Mundo = GetWorld()) {
 				switch (arrayMapaBloques[i][j])
 				{
@@ -167,6 +174,58 @@ void ABomberMan012025GameMode::SpawnBloques()
 				}
 			}
 		}
+	}
+
+}
+
+void ABomberMan012025GameMode::InicializarMapaBloques()
+{
+	// Configurar el tamaño del array principal
+	arrayMapaBloques.SetNum(50); // Define 50 filas
+
+	for (int i = 0; i < 50; i++)
+	{
+		arrayMapaBloques[i].SetNum(50); // Define 50 columnas por fila
+
+		for (int j = 0; j < 50; j++)
+		{
+			if (i == 0 || i == 49 || j == 0 || j == 49) // Bordes del mapa
+			{
+				arrayMapaBloques[i][j] = 4;
+			}
+			else if ((i % 2 == 0) && (j % 2 == 0)) // Bloques de concreto
+			{
+				arrayMapaBloques[i][j] = 1;
+			}
+			else if (FMath::RandRange(0, 4) == 2) // Probabilidad aleatoria de bloques de ladrillo
+			{
+				arrayMapaBloques[i][j] = 2;
+			}
+			else
+			{
+				arrayMapaBloques[i][j] = 0; // Espacios vacíos
+			}
+		}
+	}
+
+}
+
+void ABomberMan012025GameMode::AgregarEnemigo(AEnemigo* NuevoEnemigo)
+{
+	if (NuevoEnemigo)
+	{
+		Enemigos.Add(NuevoEnemigo); // Agrega el enemigo al TArray
+		UE_LOG(LogTemp, Warning, TEXT("Enemigo agregado. Total de enemigos: %d"), Enemigos.Num());
+	}
+
+}
+
+void ABomberMan012025GameMode::AgregarBloque(ABloque* NuevoBloque)
+{
+	if (NuevoBloque)
+	{
+		Bloques.Add(NuevoBloque); // Agrega el bloque al TArray
+		UE_LOG(LogTemp, Warning, TEXT("Bloque agregado. Total de bloques: %d"), Bloques.Num());
 	}
 
 }

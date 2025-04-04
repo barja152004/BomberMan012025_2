@@ -29,10 +29,16 @@ struct Z_Construct_UClass_ABomberMan012025GameMode_Statics
 {
 #if WITH_METADATA
 	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// Declaraci\xef\xbf\xbdn adelantada\n" },
+#endif
 		{ "HideCategories", "Info Rendering MovementReplication Replication Actor Input Movement Collision Rendering HLOD WorldPartition DataLayers Transformation" },
 		{ "IncludePath", "BomberMan012025GameMode.h" },
 		{ "ModuleRelativePath", "BomberMan012025GameMode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "Declaraci\xef\xbf\xbdn adelantada" },
+#endif
 	};
 #endif // WITH_METADATA
 	static UObject* (*const DependentSingletons[])();
@@ -81,10 +87,10 @@ ABomberMan012025GameMode::~ABomberMan012025GameMode() {}
 struct Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_ABomberMan012025GameMode, ABomberMan012025GameMode::StaticClass, TEXT("ABomberMan012025GameMode"), &Z_Registration_Info_UClass_ABomberMan012025GameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABomberMan012025GameMode), 1111722462U) },
+		{ Z_Construct_UClass_ABomberMan012025GameMode, ABomberMan012025GameMode::StaticClass, TEXT("ABomberMan012025GameMode"), &Z_Registration_Info_UClass_ABomberMan012025GameMode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABomberMan012025GameMode), 3799885416U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_3187034603(TEXT("/Script/BomberMan012025"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_1542033278(TEXT("/Script/BomberMan012025"),
 	Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

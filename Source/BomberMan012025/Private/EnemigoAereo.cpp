@@ -6,6 +6,9 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Materials/MaterialInterface.h"
 
+#include "TimerManager.h"
+#include "Math/UnrealMathUtility.h"
+
 AEnemigoAereo::AEnemigoAereo()
 {
 	//el tick si es necessario para el EnemigoAereo
@@ -31,8 +34,26 @@ void AEnemigoAereo::InicializarEnemigoAereo()
 	SetActorLocation(FVector(0.0f, 0.0f, 50.0f));
 }
 
+void AEnemigoAereo::MoverAleatoriamente()
+{
+	// Obtener la posición actual del enemigo
+	FVector PosicionActual = GetActorLocation();
+
+	// Calcular nueva posición aleatoria dentro del rango definido
+	float NuevoX = PosicionActual.X + FMath::RandRange(-RangoMovimientoX, RangoMovimientoX);
+	float NuevoY = PosicionActual.Y + FMath::RandRange(-RangoMovimientoY, RangoMovimientoY);
+	float NuevoZ = PosicionActual.Z + FMath::RandRange(-RangoMovimientoZ, RangoMovimientoZ);
+
+	// Aplicar la nueva posición
+	SetActorLocation(FVector(NuevoX, NuevoY, NuevoZ));
+
+}
+
 
 void AEnemigoAereo::BeginPlay()
 {
 	Super::BeginPlay();
+	//---
+	// Configurar un Timer para el movimiento aleatorio
+	GetWorldTimerManager().SetTimer(MovimientoTimerHandle, this, &AEnemigoAereo::MoverAleatoriamente, 2.0f, true);
 }

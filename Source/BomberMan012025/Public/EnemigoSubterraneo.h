@@ -22,5 +22,22 @@ protected:
 
 private:
 	void InicializarEnemigoSubterraneo();
+
+	//-------------
+	// Nueva función para mover aleatoriamente
+		void MoverAleatoriamente();
+
+	// Timer para controlar el movimiento aleatorio
+	FTimerHandle MovimientoTimerHandle;
+
+	// Rango de movimiento
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoX = 150.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoY = 150.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float VariacionMovimientoZ = 20.0f; // Ligeras variaciones en Z
 	
 };

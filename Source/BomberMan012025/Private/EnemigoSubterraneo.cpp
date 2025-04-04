@@ -6,6 +6,10 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Materials/MaterialInterface.h"
 
+#include "TimerManager.h"
+#include "Math/UnrealMathUtility.h"
+
+
 AEnemigoSubterraneo::AEnemigoSubterraneo()
 {
 	//el tick es necesario para el EnemigoSubterraneo
@@ -32,8 +36,25 @@ void AEnemigoSubterraneo::InicializarEnemigoSubterraneo()
 	SetActorLocation(FVector(0.0f, 0.0f, 50.0f));
 }
 
+void AEnemigoSubterraneo::MoverAleatoriamente()
+{
+	// Obtener la posición actual
+	FVector PosicionActual = GetActorLocation();
+
+	// Calcular nueva posición aleatoria
+	float NuevoX = PosicionActual.X + FMath::RandRange(-RangoMovimientoX, RangoMovimientoX);
+	float NuevoY = PosicionActual.Y + FMath::RandRange(-RangoMovimientoY, RangoMovimientoY);
+	float NuevoZ = PosicionActual.Z + FMath::RandRange(-VariacionMovimientoZ, VariacionMovimientoZ); // Variación sutil en Z
+
+	// Aplicar nueva posición
+	SetActorLocation(FVector(NuevoX, NuevoY, NuevoZ));
+
+}
+
 
 void AEnemigoSubterraneo::BeginPlay()
 {
 	Super::BeginPlay();
+	// Configurar un Timer para el movimiento aleatorio
+		GetWorldTimerManager().SetTimer(MovimientoTimerHandle, this, &AEnemigoSubterraneo::MoverAleatoriamente, 2.0f, true); // Cada 2 segundos
 }

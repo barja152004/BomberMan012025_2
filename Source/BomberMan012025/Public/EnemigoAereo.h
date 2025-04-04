@@ -22,4 +22,20 @@ protected:
 
 private:
 	void InicializarEnemigoAereo();
+	//------------
+	// Nueva función para mover aleatoriamente
+	void MoverAleatoriamente();
+
+	// Timer para regular el movimiento
+	FTimerHandle MovimientoTimerHandle;
+
+	// Rango de movimiento aleatorio
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoX = 200.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoY = 200.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoZ = 100.0f; // Movimiento vertical
 };

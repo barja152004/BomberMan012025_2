@@ -6,14 +6,20 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Materials/MaterialInterface.h"
 
+#include "TimerManager.h"
+#include "Math/UnrealMathUtility.h" // Para RandRange
+
+
+
 AEnemigoAcuatico::AEnemigoAcuatico()
 {
 	//el tick es necesario para el EnemigoAcuatico
 	PrimaryActorTick.bCanEverTick = true;
 
 	InicializarEnemigoAcuatico();
-}
 
+
+}
 
 void AEnemigoAcuatico::InicializarEnemigoAcuatico()
 {
@@ -33,8 +39,27 @@ void AEnemigoAcuatico::InicializarEnemigoAcuatico()
 	SetActorLocation(FVector(0.0f, 0.0f, 50.0f));
 }
 
+void AEnemigoAcuatico::MoverAleatoriamente()
+{
+	// Obtener la posición actual del enemigo
+	FVector PosicionActual = GetActorLocation();
+
+	// Calcular una nueva posición aleatoria dentro del rango definido
+	float NuevoX = PosicionActual.X + FMath::RandRange(-RangoMovimientoX, RangoMovimientoX);
+	float NuevoY = PosicionActual.Y + FMath::RandRange(-RangoMovimientoY, RangoMovimientoY);
+
+	// Aplicar la nueva posición
+	SetActorLocation(FVector(NuevoX, NuevoY, PosicionActual.Z));
+
+}
+
+
+
 
 void AEnemigoAcuatico::BeginPlay()
 {
 	Super::BeginPlay();
+	// Configurar un Timer para movimiento aleatorio
+	GetWorldTimerManager().SetTimer(MovimientoTimerHandle, this, &AEnemigoAcuatico::MoverAleatoriamente, 2.0f, true); // Cada 2 segundos
 }
+

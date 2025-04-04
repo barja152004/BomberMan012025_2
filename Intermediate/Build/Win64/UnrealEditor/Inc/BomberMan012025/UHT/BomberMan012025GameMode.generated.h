@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define BOMBERMAN012025_BomberMan012025GameMode_generated_h
 
-#define FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABomberMan012025GameMode(); \
 	friend struct Z_Construct_UClass_ABomberMan012025GameMode_Statics; \
@@ -23,7 +23,7 @@ public: \
 	DECLARE_SERIALIZER(ABomberMan012025GameMode)
 
 
-#define FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	ABomberMan012025GameMode(ABomberMan012025GameMode&&); \
@@ -35,12 +35,12 @@ public: \
 	BOMBERMAN012025_API virtual ~ABomberMan012025GameMode();
 
 
-#define FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_9_PROLOG
-#define FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_12_GENERATED_BODY \
+#define FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_13_PROLOG
+#define FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_12_INCLASS_NO_PURE_DECLS \
-	FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_12_ENHANCED_CONSTRUCTORS \
+	FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_16_INCLASS_NO_PURE_DECLS \
+	FID_BomberMan012025_Source_BomberMan012025_BomberMan012025GameMode_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

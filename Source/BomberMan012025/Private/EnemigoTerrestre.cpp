@@ -7,6 +7,10 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Materials/MaterialInterface.h"
 
+#include "TimerManager.h"
+#include "Math/UnrealMathUtility.h"
+
+
 AEnemigoTerrestre::AEnemigoTerrestre()
 {
 	//el tick si es necesario para el enemigo acuatico
@@ -32,8 +36,25 @@ void AEnemigoTerrestre::InicializarEnemigoTerrestre()
 	SetActorLocation(FVector(0.0f, 0.0f, 50.0f));
 }
 
+void AEnemigoTerrestre::MoverAleatoriamente()
+{
+	// Obtener la posición actual
+	FVector PosicionActual = GetActorLocation();
+
+	// Calcular nueva posición aleatoria
+	float NuevoX = PosicionActual.X + FMath::RandRange(-RangoMovimientoX, RangoMovimientoX);
+	float NuevoY = PosicionActual.Y + FMath::RandRange(-RangoMovimientoY, RangoMovimientoY);
+
+	// Aplicar nueva posición (sin cambios en Z)
+	SetActorLocation(FVector(NuevoX, NuevoY, PosicionActual.Z));
+
+}
+
 
 void AEnemigoTerrestre::BeginPlay()
 {
 	Super::BeginPlay();
+	// Configurar un Timer para el movimiento aleatorio
+	GetWorldTimerManager().SetTimer(MovimientoTimerHandle, this, &AEnemigoTerrestre::MoverAleatoriamente, 2.0f, true); // Cada 2 segundos
 }
+
