@@ -31,6 +31,8 @@ private:
 	// Timer para controlar el movimiento aleatorio
 	FTimerHandle MovimientoTimerHandle;
 
+
+
 	// Rango de movimiento aleatorio
 	UPROPERTY(EditAnywhere, Category = "Movimiento")
 	float RangoMovimientoX = 100.0f;

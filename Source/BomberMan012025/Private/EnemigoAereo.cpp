@@ -20,7 +20,7 @@ AEnemigoAereo::AEnemigoAereo()
 void AEnemigoAereo::InicializarEnemigoAereo()
 {
 	//cargar la malla del enemigo
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshAsset(TEXT("/Script/Engine.StaticMesh'/Game/StarterContent/Shapes/Shape_Plane.Shape_Plane'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshAsset(TEXT("/Script/Engine.StaticMesh'/Game/StarterContent/Shapes/Shape_NarrowCapsule.Shape_NarrowCapsule'"));
 	if (MeshAsset.Succeeded())
 	{
 		EnemigoMesh->SetStaticMesh(MeshAsset.Object);

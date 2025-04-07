@@ -27,6 +27,9 @@ private:
 	//void SpawnBloqueLadrillo();
 	void SpawnBloques();
 
+	//funcion para el  spawn de los bloques funcionales
+	void SpawnBloqueFuncionales();
+
 public:
 	FVector posicionSgtBloque = FVector(1000.0f, 500.0f,20.0f );
 
@@ -36,29 +39,11 @@ public:
 	// Método para inicializar la matriz del laberinto
 	void InicializarMapaBloques(); // Declaración del método
 
+	//funcion de spawn de enemigos aleatorios
+	void SpawnEnemigos();
 
 
 
-	/*TArray<TArray<int32>> arrayMapaBloques = {
-									{4,4,4,4,4,4,4,4,4,4,4,4},
-									{4,0,0,0,2,2,2,0,0,0,0,4},
-									{4,2,1,0,0,0,0,0,1,2,0,4},
-									{4,0,1,0,2,0,2,0,0,0,0,4},
-									{4,0,0,0,0,2,2,0,1,1,2,4},
-									{4,0,2,2,2,0,2,0,2,2,2,4},
-									{4,0,0,0,1,0,1,0,0,0,0,4},
-									{4,2,2,0,2,0,2,1,2,1,0,4},
-									{4,0,2,0,2,0,2,2,1,2,0,4},
-									{4,0,2,0,2,0,2,2,2,1,0,4},
-									{4,0,0,0,0,0,0,0,0,0,0,4},
-									{4,4,4,4,4,4,4,4,4,4,4,4} };*/
-
-
-
-
-
-
-	//TArray<class Bloques*> arraybloques;
 
 
 	//almacenado en un TArray los bloques y enemigos

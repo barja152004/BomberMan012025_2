@@ -40,21 +40,21 @@ void ABloque::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	if (bPuedeMoverse)
-	{
-		FVector NewLocation = GetActorLocation();
-		FRotator NewRotation = GetActorRotation();
-		float RunningTime = GetGameTimeSinceCreation();
+	//if (bPuedeMoverse)
+	//{
+	//	FVector NewLocation = GetActorLocation();
+	//	FRotator NewRotation = GetActorRotation();
+	//	float RunningTime = GetGameTimeSinceCreation();
 
-		//aletoriedad en el dezplazamiento en z
-		float DeltaHeight = FMath::FRandRange(-1.0f, 1.0f) * FloatSpeed;
-		NewLocation.Z += DeltaHeight;
+	//	//aletoriedad en el dezplazamiento en z
+	//	float DeltaHeight = FMath::FRandRange(-1.0f, 1.0f) * FloatSpeed;
+	//	NewLocation.Z += DeltaHeight;
 
-		//aletoriedad de rotacion 
-		float DeltaRotation = FMath::FRandRange(-1.0f, 1.0f) * RotationSpeed;
-		NewRotation.Yaw += DeltaRotation;
+	//	//aletoriedad de rotacion 
+	//	float DeltaRotation = FMath::FRandRange(-1.0f, 1.0f) * RotationSpeed;
+	//	NewRotation.Yaw += DeltaRotation;
 
-		SetActorLocationAndRotation(NewLocation, NewRotation);
-	}
+	//	SetActorLocationAndRotation(NewLocation, NewRotation);
+	//}
 }
 

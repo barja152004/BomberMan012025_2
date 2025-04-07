@@ -1,0 +1,94 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+#include "UObject/GeneratedCppIncludes.h"
+#include "BomberMan012025/Public/EnemigoFuego.h"
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+void EmptyLinkFunctionForGeneratedCodeEnemigoFuego() {}
+
+// Begin Cross Module References
+BOMBERMAN012025_API UClass* Z_Construct_UClass_AEnemigo();
+BOMBERMAN012025_API UClass* Z_Construct_UClass_AEnemigoFuego();
+BOMBERMAN012025_API UClass* Z_Construct_UClass_AEnemigoFuego_NoRegister();
+UPackage* Z_Construct_UPackage__Script_BomberMan012025();
+// End Cross Module References
+
+// Begin Class AEnemigoFuego
+void AEnemigoFuego::StaticRegisterNativesAEnemigoFuego()
+{
+}
+IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AEnemigoFuego);
+UClass* Z_Construct_UClass_AEnemigoFuego_NoRegister()
+{
+	return AEnemigoFuego::StaticClass();
+}
+struct Z_Construct_UClass_AEnemigoFuego_Statics
+{
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[] = {
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "/**\n * \n */" },
+#endif
+		{ "HideCategories", "Navigation" },
+		{ "IncludePath", "EnemigoFuego.h" },
+		{ "ModuleRelativePath", "Public/EnemigoFuego.h" },
+	};
+#endif // WITH_METADATA
+	static UObject* (*const DependentSingletons[])();
+	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
+		TCppClassTypeTraits<AEnemigoFuego>::IsAbstract,
+	};
+	static const UECodeGen_Private::FClassParams ClassParams;
+};
+UObject* (*const Z_Construct_UClass_AEnemigoFuego_Statics::DependentSingletons[])() = {
+	(UObject* (*)())Z_Construct_UClass_AEnemigo,
+	(UObject* (*)())Z_Construct_UPackage__Script_BomberMan012025,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigoFuego_Statics::DependentSingletons) < 16);
+const UECodeGen_Private::FClassParams Z_Construct_UClass_AEnemigoFuego_Statics::ClassParams = {
+	&AEnemigoFuego::StaticClass,
+	"Game",
+	&StaticCppClassTypeInfo,
+	DependentSingletons,
+	nullptr,
+	nullptr,
+	nullptr,
+	UE_ARRAY_COUNT(DependentSingletons),
+	0,
+	0,
+	0,
+	0x009000A4u,
+	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AEnemigoFuego_Statics::Class_MetaDataParams), Z_Construct_UClass_AEnemigoFuego_Statics::Class_MetaDataParams)
+};
+UClass* Z_Construct_UClass_AEnemigoFuego()
+{
+	if (!Z_Registration_Info_UClass_AEnemigoFuego.OuterSingleton)
+	{
+		UECodeGen_Private::ConstructUClass(Z_Registration_Info_UClass_AEnemigoFuego.OuterSingleton, Z_Construct_UClass_AEnemigoFuego_Statics::ClassParams);
+	}
+	return Z_Registration_Info_UClass_AEnemigoFuego.OuterSingleton;
+}
+template<> BOMBERMAN012025_API UClass* StaticClass<AEnemigoFuego>()
+{
+	return AEnemigoFuego::StaticClass();
+}
+DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemigoFuego);
+AEnemigoFuego::~AEnemigoFuego() {}
+// End Class AEnemigoFuego
+
+// Begin Registration
+struct Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoFuego_h_Statics
+{
+	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
+		{ Z_Construct_UClass_AEnemigoFuego, AEnemigoFuego::StaticClass, TEXT("AEnemigoFuego"), &Z_Registration_Info_UClass_AEnemigoFuego, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemigoFuego), 407261239U) },
+	};
+};
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoFuego_h_1813787051(TEXT("/Script/BomberMan012025"),
+	Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoFuego_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BomberMan012025_Source_BomberMan012025_Public_EnemigoFuego_h_Statics::ClassInfo),
+	nullptr, 0,
+	nullptr, 0);
+// End Registration
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
