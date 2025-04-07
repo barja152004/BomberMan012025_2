@@ -52,7 +52,7 @@ void ABomberMan012025GameMode::BeginPlay()
 	//generar el mapa al inicio del juego
 	SpawnMapa();
 
-	//mapa v2
+	//generar bloques
 	SpawnBloques();
 
 	//spawnear bloques funcionales
