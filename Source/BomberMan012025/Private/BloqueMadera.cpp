@@ -15,12 +15,7 @@ ABloqueMadera::ABloqueMadera()
 }
 
 void ABloqueMadera::InicializarBloqueMadera()
-{//Si se nececita cambia la malla o el material se hace aqui
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ObjetoMalla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
-	if (ObjetoMalla.Succeeded())
-	{
-		MallaBloque->SetStaticMesh(ObjetoMalla.Object);
-	}
+{
 	//cargar y asignar material
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> ObjetoMaterial(TEXT("Material'/Game/StarterContent/Materials/M_Brick_Clay_New.M_Brick_Clay_New'"));
 	if (ObjetoMaterial.Succeeded())

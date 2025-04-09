@@ -20,8 +20,6 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-public:
-	virtual void Tick(float DeltaTime) override;
 
 private:
 	void InicializarEnemigoFuego();
@@ -29,5 +27,12 @@ private:
 	//----------
 	//funciones del movimiento
 	void MoverAleatoriamente();
+
 	FTimerHandle MovimientoTimerHandle;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoX = 150.0f;
+
+	UPROPERTY(EditAnywhere, Category = "Movimiento")
+	float RangoMovimientoY = 150.0f;
 };

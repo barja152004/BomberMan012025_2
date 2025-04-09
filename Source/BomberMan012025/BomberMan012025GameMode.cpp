@@ -4,6 +4,7 @@
 #include "BomberMan012025Character.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/World.h"
+
 #include "Bloque.h"
 #include "BloqueAcero.h"
 #include "BloqueMadera.h"
@@ -230,30 +231,47 @@ void ABomberMan012025GameMode::SpawnEnemigos()
 {
 	if (UWorld* Mundo = GetWorld())
 	{
-		//haciendo spawn de EnemigoAcuatico
-		for (int i = 0; i < 3; i++)
+		// Array con las clases de los enemigos
+		TArray<TSubclassOf<AEnemigo>> TiposEnemigos = {
+			AEnemigoAcuatico::StaticClass(),
+			AEnemigoTerrestre::StaticClass(),
+			AEnemigoSubterraneo::StaticClass(),
+			AEnemigoAereo::StaticClass(),
+			AEnemigoFuego::StaticClass()
+		};
+
+		// Encontrar todas las posiciones vacías en el laberinto
+		TArray<FVector> PosicionesDisponibles;
+		for (int i = 0; i < arrayMapaBloques.Num(); i++)
 		{
-			Mundo->SpawnActor<AEnemigoAcuatico>(AEnemigoAcuatico::StaticClass(), FVector(1900.0f + i * 200, 7150.0f + i * 200, 580.0f), FRotator::ZeroRotator);
+			for (int j = 0; j < arrayMapaBloques[i].Num(); j++)
+			{
+				if (arrayMapaBloques[i][j] == 0) // Si la celda está vacía
+				{
+					FVector Posicion = FVector(200.0f + i * 200, 150.0f + j * 200, -100.0f);
+					PosicionesDisponibles.Add(Posicion);
+				}
+			}
 		}
-		//haciendo spawn de EnemigoTerrestre
-		for (int i = 0; i < 3; i++)
+
+		// Spawnear 3 enemigos para cada tipo
+		for (TSubclassOf<AEnemigo> TipoEnemigo : TiposEnemigos)
 		{
-			Mundo->SpawnActor<AEnemigoTerrestre>(AEnemigoTerrestre::StaticClass(), FVector(1900.0f + i * 200, 2450.0f + i * 200, 580.0f), FRotator::ZeroRotator);
-		}
-		//haciendo spawn de EnemigoAereo
-		for (int i = 0; i < 3; i++)
-		{
-			Mundo->SpawnActor<AEnemigoAereo>(AEnemigoAereo::StaticClass(), FVector(4400.0f + i * 200, 2450.0f + i * 200, 580.0f), FRotator::ZeroRotator);
-		}
-		//haciendo spawn de EnemigoSubterraneo
-		for (int i = 0; i < 3; i++)
-		{
-			Mundo->SpawnActor<AEnemigoSubterraneo>(AEnemigoSubterraneo::StaticClass(), FVector(3480.0f + i * 200, 4550.0f + i * 200, 580.0f), FRotator::ZeroRotator);
-		}
-		//haciendo spawn de EnemigoFuego
-		for (int i = 0; i < 3; i++)
-		{
-			Mundo->SpawnActor<AEnemigoFuego>(AEnemigoFuego::StaticClass(), FVector(4710.0f + i * 200, 7330.0f + i * 200, 580.0f), FRotator::ZeroRotator);
+			for (int k = 0; k < 3; k++) // Spawnear 3 enemigos por tipo
+			{
+				if (PosicionesDisponibles.Num() > 0)
+				{
+					// Elegir una posición aleatoria de las disponibles
+					int IndexAleatorio = FMath::RandRange(0, PosicionesDisponibles.Num() - 1);
+					FVector PosicionElegida = PosicionesDisponibles[IndexAleatorio];
+
+					// Spawnear el enemigo en la posición elegida
+					Mundo->SpawnActor<AEnemigo>(TipoEnemigo, PosicionElegida, FRotator::ZeroRotator);
+
+					// Eliminar la posición para evitar que se repita
+					PosicionesDisponibles.RemoveAt(IndexAleatorio);
+				}
+			}
 		}
 	}
 

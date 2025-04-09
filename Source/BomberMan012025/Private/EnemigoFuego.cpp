@@ -38,11 +38,15 @@ void AEnemigoFuego::InicializarEnemigoFuego()
 
 void AEnemigoFuego::MoverAleatoriamente()
 {
-	FVector NuevaPosicion = GetActorLocation();
-	NuevaPosicion.X += FMath::RandRange(-200.0f, 200.0f);
-	NuevaPosicion.Y += FMath::RandRange(-200.0f, 200.0f);
+	// Obtener la posición actual
+	FVector PosicionActual = GetActorLocation();
 
-	SetActorLocation(NuevaPosicion, true); // Mover con colisiones
+	// Calcular nueva posición aleatoria
+	float NuevoX = PosicionActual.X + FMath::RandRange(-RangoMovimientoX, RangoMovimientoX);
+	float NuevoY = PosicionActual.Y + FMath::RandRange(-RangoMovimientoY, RangoMovimientoY);
+
+	// Aplicar nueva posición (sin cambios en Z)
+	SetActorLocation(FVector(NuevoX, NuevoY, PosicionActual.Z));
 
 }
 
@@ -53,10 +57,4 @@ void AEnemigoFuego::BeginPlay()
 
 	// Configurar un Timer para mover al enemigo aleatoriamente
 	GetWorldTimerManager().SetTimer(MovimientoTimerHandle, this, &AEnemigoFuego::MoverAleatoriamente, 2.0f, true);
-}
-
-void AEnemigoFuego::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
 }

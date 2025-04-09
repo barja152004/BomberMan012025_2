@@ -16,12 +16,7 @@ ABloqueConcreto::ABloqueConcreto()
 }
 
 void ABloqueConcreto::InicializarBloqueConcreto()
-{   //Si se nececita cambia la malla o el material se hace aqui
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> ObjetoMalla(TEXT("StaticMesh'/Game/StarterContent/Shapes/Shape_Cube.Shape_Cube'"));
-	if (ObjetoMalla.Succeeded())
-	{
-		MallaBloque->SetStaticMesh(ObjetoMalla.Object);
-	}
+{   
 	//cargar y asignar material
 	static ConstructorHelpers::FObjectFinder<UMaterialInterface> ObjetoMaterial(TEXT("Material'/Game/StarterContent/Materials/M_CobbleStone_Rough.M_CobbleStone_Rough'"));
 	if (ObjetoMaterial.Succeeded())
